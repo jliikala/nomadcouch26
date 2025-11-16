@@ -1,0 +1,16 @@
+<header class="site-header">
+  {{ $avatar := or .Site.Params.avatar .Site.Author.avatar }}
+
+  {{ if $avatar }}
+    <img src="{{ $avatar }}" alt="Profile photo" class="avatar-header">
+  {{ end }}
+  <div class="site-title-group">
+    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+
+    {{ with .Site.Params.description }}
+      <p class="description">{{ . }}</p>
+    {{ end }}
+  </div>
+
+  <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
+</header>
