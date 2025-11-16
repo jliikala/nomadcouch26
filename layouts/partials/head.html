@@ -3,11 +3,11 @@
 
 <title>{{ if .Title }}{{ .Title }} – {{ end }}{{ .Site.Title }}</title>
 
-<link rel="stylesheet" href="{{ resources.Get "css/main.css" | minify | fingerprint | relURL }}">
+<link rel="stylesheet" href="/css/main.css">
 
 {{ if .Site.Params.favicon }}
 <link rel="icon" href="{{ .Site.Params.favicon }}">
 {{ end }}
 
 {{ partial "microblog_head.html" . }}
-<script src="{{ resources.Get "js/theme.js" | minify | fingerprint | relURL }}" defer></script>
+<script src="/js/theme.js" defer></script>
