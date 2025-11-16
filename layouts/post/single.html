@@ -29,6 +29,21 @@
 
 </div>
 
+<div class="content-meta">
+{{ if templates.Exists "partials/microhook-categories.html" }}
+{{ partial "microhook-categories.html" . }}
+{{ else }}
+{{ if .Params.categories }}
+{{ with .GetTerms "categories" }}
+  <ul class="post-tags">
+    {{ range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+    {{ end }}
+  </ul>
+{{ end }}
+{{ end }}
+{{ end }}
+
 {{ if or (templates.Exists "partials/reply-by-email.html") (templates.Exists "partials/conversation-link.html") (templates.Exists "partials/plugin_tinylytics.html") (templates.Exists "partials/reply-on-mastodon.html") (templates.Exists "partials/microhook-share-button.html")}}
 <ul class="reply-buttons">
   {{ if templates.Exists "partials/plugin_tinylytics.html" }}
