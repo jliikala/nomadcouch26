@@ -1,13 +1,18 @@
 {{ define "main" }}
-  {{ range first 10 (where .Site.RegularPages "Section" "post") }}
+  {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") }}
+  {{ range $paginator.Pages }}
     <article>
-      {{ if .Title }}
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-      {{ end }}
-
-      <div class="content">
-        {{ .Summary | safeHTML }}
-      </div>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <div class="content">{{ .Summary | safeHTML }}</div>
     </article>
   {{ end }}
+
+  <div class="post-nav">
+    {{ if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}">← Newer</a>
+    {{ end }}
+    {{ if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}">Older →</a>
+    {{ end }}
+  </div>
 {{ end }}
