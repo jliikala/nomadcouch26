@@ -3,11 +3,12 @@
 
 <title>{{ if .Title }}{{ .Title }} – {{ end }}{{ .Site.Title }}</title>
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 
 {{ if .Site.Params.favicon }}
 <link rel="icon" href="{{ .Site.Params.favicon }}">
 {{ end }}
 
 {{ partial "microblog_head.html" . }}
-<script src="/js/theme.js" defer></script>
+<script src="{{ "js/theme.js" | relURL }}"></script>
+
