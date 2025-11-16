@@ -1,13 +1,10 @@
 <aside class="sidebar">
 
-  {{ with .Site.Params.sidebar.bio }}
-
   <!-- SUBSCRIBE -->
   <section class="sidebar-block">
     <h3>Subscribe via email</h3>
     <p>Get a free ping via email when new post is out. Spam-free delivery, now and forever. Thanks for subscribing!</p>
 
-    <!-- Your custom subscribe form -->
     {{ partial "subscribe-form.html" . }}
   </section>
 
@@ -28,7 +25,6 @@
   <!-- ABOUT THE AUTHOR -->
   <section class="sidebar-block">
     <h3>About the author</h3>
-
     <p>
       Welcome to <strong>Nomad Couch</strong> – My tiny travel log ⚡️ photo blog,
       where I share some of my favourite moments from travels and adventures near and far.
@@ -43,7 +39,5 @@
     {{ end }}
 
   </section>
-
-  {{ end }}
 
 </aside>

@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ range .Pages }}
+  {{ range first 10 (where .Site.RegularPages "Section" "post") }}
     <article>
       {{ if .Title }}
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
