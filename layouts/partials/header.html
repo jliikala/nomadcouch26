@@ -3,23 +3,24 @@
   {{ if $avatar }}
     <img src="{{ $avatar }}" alt="Profile photo" class="avatar-header">
   {{ end }}
-  <p class="site-title-group">
-    <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-  </p>
-
-  <div class="site-nav">
-    <nav>
-      <ul>
-        {{ range .Site.Menus.main }}
-        {{ if .Page.Params.redirect_url }}
-        <li><a class="page-link {{ .Name }}" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
-        {{ else }}
-        <li><a class="page-link {{ .Name }}" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a></li>
-        {{ end }}
-        {{ end }}
-      </ul>
-	  </nav>
-
-  <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
+  <div class="site-header-nav">
+    <p class="site-title-group">
+      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    </p>
+    <div class="site-nav">
+      <nav>
+        <ul>
+          {{ range .Site.Menus.main }}
+          {{ if .Page.Params.redirect_url }}
+          <li><a class="page-link {{ .Name }}" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
+          {{ else }}
+          <li><a class="page-link {{ .Name }}" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a></li>
+          {{ end }}
+          {{ end }}
+        </ul>
+      </nav>
+      {{ partial "social-icons-nav.html" . }}
+    <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
+    </div>
   </div>
 </header>

@@ -188,13 +188,33 @@ hr, .sidebar-block, footer {
   background-size: cover;
 }
 
-article h2 a, .sidebar-posts a {
+article h2 a, .sidebar-posts a, .site-header a {
   text-decoration: none;
   color: inherit;
 }
 
 article h2 a:hover, .sidebar-posts a:hover {
   text-decoration: underline;
+}
+
+.site-header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-nav nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
 }
 
 /* Responsive */
