@@ -4,14 +4,39 @@
   --link: inherit;
   --border: #e0e0e0;
   --avatar-border: #fffaf0;
+  /* form / control variables */
+  --control-bg: #ffffff;
+  --control-text: #111111;
+  --control-border: #e6e6e6;
+  --control-placeholder: #7a7a7a;
+  --control-focus: #2563eb; /* blue focus */
+  --control-focus-ring: rgba(37,99,235,0.12);
+  --button-bg: transparent;
+  --button-text: var(--text);
+  --button-border: var(--control-border);
+  --button-hover-bg: rgba(0,0,0,0.04);
 }
 
 :root[data-theme="dark"] {
   --bg: #1a1a1a;
   --text: #e5e5e5;
   --link: inherit;
+  --btn-primary-bg: var(--control-focus);
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: rgba(0,0,0,0.08);
   --border: #333333;
   --avatar-border: #1a1a1a;
+  /* dark form / control variables */
+  --control-bg: #111111;
+  --control-text: #e5e5e5;
+  --control-border: #2b2b2b;
+  --control-placeholder: #9a9a9a;
+  --control-focus: #60a5fa;
+  --control-focus-ring: rgba(96,165,250,0.12);
+  --button-bg: transparent;
+  --button-text: var(--text);
+  --button-border: var(--control-border);
+  --button-hover-bg: rgba(255,255,255,0.03);
 }
 
 html, body {
@@ -24,6 +49,90 @@ html, body {
 body {
   font-family: system-ui, sans-serif;
   line-height: 1.6;
+}
+
+/* Global form controls */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--control-text);
+  background: var(--control-bg);
+  border: 1px solid var(--control-border);
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  transition: box-shadow 120ms ease, border-color 120ms ease, background-color 120ms ease;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--control-placeholder);
+  opacity: 1;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+  border-color: var(--control-focus);
+  box-shadow: 0 0 0 6px var(--control-focus-ring);
+}
+
+/* Buttons */
+button,
+input[type="button"],
+input[type="submit"],
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid var(--button-border);
+  background: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: background-color 120ms ease, transform 60ms ease, opacity 120ms ease;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+.btn:hover {
+  background: var(--button-hover-bg);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button[disabled],
+input[disabled],
+textarea[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* small helpers */
+.form-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* make checkboxes/radios use theme accent */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--text);
 }
 
 .container {
