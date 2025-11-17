@@ -223,6 +223,12 @@ article h2 a:hover, .sidebar-posts a:hover {
   align-items: center;
 }
 
+.social-link svg {
+  fill: var(--text);
+  width: 24px;
+  height: 24px;
+}
+
 .screen-reader-text {
   position: absolute;
   width: 1px;
