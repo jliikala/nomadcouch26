@@ -1,9 +1,9 @@
 :root {
-  --bg: #ffffff;
+  --bg: #fffaf0;
   --text: #111111;
   --link: #0066cc;
   --border: #e0e0e0;
-  --avatar-border: #d6d6d6;
+  --avatar-border: #fffaf0;
 }
 
 :root[data-theme="dark"] {
@@ -11,14 +11,19 @@
   --text: #e5e5e5;
   --link: #70baff;
   --border: #333333;
-  --avatar-border: #3a3a3a;
+  --avatar-border: #1a1a1a;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
 }
 
 body {
   font-family: system-ui, sans-serif;
   line-height: 1.6;
-  background: var(--bg);
-  color: var(--text);
 }
 
 .container {
@@ -100,13 +105,12 @@ hr, .sidebar-block, footer {
 
 .avatar-header {
   position: absolute;
-  top: 18vh;
-  width: 42px;
-  height: 42px;
+  top: 16vh;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 1rem;
-  border: 2px solid var(--avatar-border);
+  border: 5px solid var(--avatar-border);
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
 
@@ -189,6 +193,7 @@ article h2 a:hover, .sidebar-posts a:hover {
 .site-header-nav {
   display: flex;
   align-items: center;
+  margin-top: 2rem;
 }
 
 .site-nav {
@@ -220,6 +225,14 @@ article h2 a:hover, .sidebar-posts a:hover {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.post-list-item {
+  margin-bottom: 2rem;
+}
+
+.post-list-item h2 {
+  margin-top: 0;
 }
 
 @media (max-width: 800px) {

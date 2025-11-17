@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") }}
   {{ range $paginator.Pages }}
-    <article>
+    <article class="post-list-item">
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
       <div class="content">{{ .Summary | safeHTML }}</div>
     </article>
