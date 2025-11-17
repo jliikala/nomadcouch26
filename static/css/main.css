@@ -258,24 +258,26 @@ hr, .sidebar-block, footer {
 }
 
 .sidebar input[type="email"] {
-  padding: 0.5rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--bg);
-  color: var(--text);
+  /* use the global control variables for consistent appearance */
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--control-border);
+  border-radius: 8px;
+  background: var(--control-bg);
+  color: var(--control-text);
 }
 
 .sidebar button {
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
+  /* use button variables so appearance matches other buttons; specific variants (e.g. .btn--primary) will override */
+  padding: 0.55rem 0.85rem;
+  border-radius: 8px;
   cursor: pointer;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--text);
+  border: 1px solid var(--button-border);
+  background: var(--button-bg);
+  color: var(--button-text);
 }
 
 .sidebar button:hover {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .sidebar-avatar-wrapper {
