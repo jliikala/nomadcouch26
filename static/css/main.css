@@ -184,9 +184,6 @@ hr, .sidebar-block, footer {
 }
 
 .site-cover {
-  background-position-x: center;
-  background-position-y: center;
-  background-repeat: no-repeat;
   height: 20vh;
   background-size: cover;
 }
