@@ -1,7 +1,9 @@
 <header class="site-header">
   {{ $avatar := or .Site.Params.avatar .Site.Author.avatar }}
   {{ if $avatar }}
-    <img src="{{ $avatar }}" alt="Profile photo" class="avatar-header">
+    <a href="{{ .Site.BaseURL }}">
+      <img src="{{ $avatar }}" alt="Nomad Couch avatar" class="avatar-header">
+    </a>
   {{ end }}
   <div class="site-header-nav">
     <p class="site-title-group">
