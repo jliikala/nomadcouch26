@@ -1,7 +1,7 @@
 :root {
   --bg: #fffaf0;
   --text: #111111;
-  --link: #0066cc;
+  --link: inherit;
   --border: #e0e0e0;
   --avatar-border: #fffaf0;
 }
@@ -9,7 +9,7 @@
 :root[data-theme="dark"] {
   --bg: #1a1a1a;
   --text: #e5e5e5;
-  --link: #70baff;
+  --link: inherit;
   --border: #333333;
   --avatar-border: #1a1a1a;
 }
@@ -34,6 +34,7 @@ body {
 
 a {
   color: var(--link);
+  text-decoration: none;
 }
 
 img {
