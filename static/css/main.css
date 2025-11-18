@@ -367,4 +367,52 @@ article h2 a:hover, .sidebar-posts a:hover {
   .sidebar {
     margin-top: 2rem;
   }
+
+  /* Stack header title above navigation on small screens */
+  .site-header-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  /* Ensure the title occupies the first row and the nav/icons/toggle the second row */
+  .site-title-group {
+    width: 100%;
+  }
+
+  .site-nav {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    flex-wrap: wrap; /* allow items to wrap onto multiple lines if needed */
+  }
+
+  /* Let the primary nav take available space so menu items flow naturally */
+  .site-nav > nav {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .site-nav nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  /* Social icons and other inline items stay inline with the nav on the second row */
+  .site-nav .social-link,
+  .site-nav .social-icons,
+  .site-nav .social-icons-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Keep the theme toggle on the far right of the second row */
+  .site-nav #theme-toggle {
+    margin-left: auto;
+  }
 }
