@@ -194,6 +194,10 @@ hr, .sidebar-block, footer {
   margin: 0 0 0.3rem 0;
 }
 
+.site-footer p {
+  display: flex;
+}
+
 #theme-toggle {
   margin-left: auto;
   padding: 0.3rem 0.6rem;
